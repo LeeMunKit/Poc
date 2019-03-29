@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Poc</string>
+    //
+    <string name="btn_sign_out">Sign Out</string>
+</resources>
