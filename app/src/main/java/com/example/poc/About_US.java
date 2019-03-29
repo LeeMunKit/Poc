@@ -9,6 +9,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -95,13 +96,13 @@ public class About_US extends AppCompatActivity {
                     Toast.makeText(About_US.this, "Please describe about your company",Toast.LENGTH_SHORT).show();
                     return;
                 }
-
                 auth.createUserWithEmailAndPassword(mercEmail, mercPass).addOnCompleteListener(About_US.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (!task.isSuccessful()) {
                             Toast.makeText(About_US.this, "Authentication failed!\n" + task.getException().getLocalizedMessage(),
                                     Toast.LENGTH_SHORT).show();
+                            Log.i("test123", task.getException().getLocalizedMessage());
                         } else {
                             FirebaseUser merchant = auth.getCurrentUser();
                             MerchantEntity.LogFirebase(merchantRef, mercName, mercBusiNo, mercAddr, mercEmail, merchant.getUid(), Year, aboutUs, NoOfEmp);
