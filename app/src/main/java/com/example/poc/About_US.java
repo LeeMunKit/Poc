@@ -64,12 +64,13 @@ public class About_US extends AppCompatActivity {
 //        final String mercEmail = bundle.getString("mEmail");
 //        final String mercPass = bundle.getString("mPass");
 
-        Intent b = this.getIntent();
-        final String mercName = b.getStringExtra("mName");
-        final String mercBusiNo = b.getStringExtra("businessReg");
-        final String mercAddr = b.getStringExtra("mAdds");
-        final String mercEmail = b.getStringExtra("mEmail");
-        final String mercPass = b.getStringExtra("mPass");
+//        Intent b = this.getIntent();
+        Bundle b = getIntent().getExtras();
+        final String mercName = b.getString("mName");
+        final String mercBusiNo = b.getString("businessReg");
+        final String mercAddr = b.getString("mAdds");
+        final String mercEmail = b.getString("mEmail");
+        final String mercPass = b.getString("mPass");
 
         uploadLogo.setOnClickListener(new View.OnClickListener() {
             @Override
