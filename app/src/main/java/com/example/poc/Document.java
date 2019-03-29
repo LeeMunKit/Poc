@@ -37,6 +37,13 @@ public class Document extends AppCompatActivity {
         aboutRef = database.getReference("aboutEntity");
         Uri uriImage;
 
+        Intent b = this.getIntent();
+        final String mercName = b.getStringExtra("mName");
+        final String mercBusiNo = b.getStringExtra("businessReg");
+        final String mercAddr = b.getStringExtra("mAdds");
+        final String mercEmail = b.getStringExtra("mEmail");
+        final String mercPass = b.getStringExtra("mPass");
+
         uploadDoc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +63,14 @@ public class Document extends AppCompatActivity {
         next2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Document.this, About_US.class));
+
+                Intent intent = new Intent(Document.this, About_US.class);
+                intent.putExtra("mName", mercName);
+                intent.putExtra("businessReg", mercBusiNo);
+                intent.putExtra("mAdds",mercAddr);
+                intent.putExtra("mEmail",mercEmail);
+                intent.putExtra("mPass",mercPass);
+                startActivity(intent);
             }
         });
     }

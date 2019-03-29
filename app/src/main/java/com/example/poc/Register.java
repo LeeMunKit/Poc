@@ -77,7 +77,7 @@ public class Register extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Please enter at least 8 characters", Toast.LENGTH_SHORT).show();
                     return;
                 }
-               Intent intent = new Intent(Register.this, About_US.class);
+               Intent intent = new Intent(Register.this, Document.class);
 //                Bundle bundle = new Bundle();
 //                bundle.putString("mName",CompanyName.getText().toString().trim());
 //                bundle.putString("businessReg", businessReg.getText().toString().trim());
