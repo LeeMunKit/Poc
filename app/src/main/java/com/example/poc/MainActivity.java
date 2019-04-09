@@ -19,6 +19,10 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity {
     Button register;
 
+    private FirebaseAuth auth;
+    private FirebaseDatabase database;
+    private DatabaseReference pendingRef, userRef;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,11 +30,22 @@ public class MainActivity extends AppCompatActivity {
 
         register = findViewById(R.id.btnSignUp);
 
+        auth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
+        userRef = database.getReference("MerchantEntity");
+        pendingRef = database.getReference("ApproveEntity");
+
         register.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Register.class));
+                startActivity(new Intent(MainActivity.this, Login_Activity.class));
             }
         }));
+
+
+        //get status if status = 1 then go Pending screen, if status = 0 then go Dashboard screen
+
     }
+
+
 }

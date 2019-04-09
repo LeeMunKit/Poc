@@ -36,10 +36,6 @@ public class Register extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         merchantRef = database.getReference("MerchantEntity");
 
-//        if (auth.getCurrentUser()!= null){
-//            startActivity(new Intent(Register.this, Document.class));
-//        }
-
         CompanyName = findViewById(R.id.etName);
         businessReg = findViewById(R.id.etBusinessReg);
         address = findViewById(R.id.etAddress);
@@ -78,13 +74,6 @@ public class Register extends AppCompatActivity {
                     return;
                 }
                Intent intent = new Intent(Register.this, Document.class);
-//                Bundle bundle = new Bundle();
-//                bundle.putString("mName",CompanyName.getText().toString().trim());
-//                bundle.putString("businessReg", businessReg.getText().toString().trim());
-//                bundle.putString("mAdds",address.getText().toString().trim());
-//                bundle.putString("mEmail",email.getText().toString().trim());
-//                bundle.putString("mPass",password.getText().toString().trim());
-
                 intent.putExtra("mName",CompanyName.getText().toString());
                 intent.putExtra("businessReg", businessReg.getText().toString());
                 intent.putExtra("mAdds",address.getText().toString());
@@ -95,22 +84,5 @@ public class Register extends AppCompatActivity {
 
             }
         });
-//                auth.createUserWithEmailAndPassword(merchantEmail, merchantPass).addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        if (!task.isSuccessful()) {
-//                            Toast.makeText(Register.this, "Authentication failed!\n" + task.getException().getLocalizedMessage(),
-//                                    Toast.LENGTH_SHORT).show();
-//                        } else {
-//                            FirebaseUser merchant = auth.getCurrentUser();
-//                            MerchantEntity.LogFirebase(merchantRef, merchantName, businessRegNo, merchantAdds, merchantEmail, merchant.getUid());
-//                            startActivity(new Intent(Register.this, Document.class));
-//                            finish();
-//                        }
-//                    }
-//                });
-
-//            }
-//    });
     }
 }

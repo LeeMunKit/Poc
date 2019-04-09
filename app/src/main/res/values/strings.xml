@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">Poc</string>
-    //
-    <string name="btn_sign_out">Sign Out</string>
+    <string name="title_activity_custom_uiapp_base">CustomUIAppBaseActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="app_name">app_name</string>
+    <string name="description">Please take a photo of the front side of your director identification card for verification</string>
+    <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
 </resources>

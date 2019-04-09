@@ -1,92 +1,91 @@
 package com.example.poc.Entity;
 
+import android.net.Uri;
+import android.widget.CheckBox;
+
 import com.google.firebase.database.DatabaseReference;
 
 public class MerchantEntity {
-    private String companyName, businessRegNo, mcAdds, mcEmail, uid, AboutDesc;
-    private Integer yearEstablish, NoEmployee;
+    private String compName, compEmail, regNo, compAddr, postcode, state, summary, uid;
 
-    public MerchantEntity(String companyName, String businessRegNo, String mcAdds, String mcEmail, String uid, String yearEstablish, String aboutDesc, String noEmployee){
-    }
 
-    public MerchantEntity(String companyName, String businessRegNo, String mcAdds, String mcEmail, String uid, String AboutDesc, Integer yearEstablish, Integer NoEmployee){
-        this.companyName = companyName;
-        this.businessRegNo = businessRegNo;
-        this.mcAdds = mcAdds;
-        this.mcEmail = mcEmail;
+    public MerchantEntity(String compName, String compEmail, String regNo, String compAddr, String postcode, String state, String summary, String uid){
+        this.compName = compName;
+        this.compEmail = compEmail;
+        this.regNo = regNo;
+        this.compAddr = compAddr;
+        this.postcode = postcode;
+        this.state = state;
+        this.summary = summary;
         this.uid = uid;
-
-        this.AboutDesc = AboutDesc;
-        this.yearEstablish = yearEstablish;
-        this.NoEmployee = NoEmployee;
     }
 
-    public static void LogFirebase(DatabaseReference ref, String companyName, String businessRegNo, String mcAdds, String mcEmail, String uid, String yearEstablish, String AboutDesc, String NoEmployee){
-        MerchantEntity merchant = new MerchantEntity(companyName, businessRegNo, mcAdds, mcEmail, uid, yearEstablish, AboutDesc, NoEmployee);
+    public static void LogFirebase(DatabaseReference ref, String compName, String compEmail, String regNo, String compAddr, String postcode, String state, String summary, String uid){
+        MerchantEntity merchant = new MerchantEntity(compName, compEmail, regNo, compAddr, postcode, state, summary, uid);
         ref.child(uid).child("Registration").setValue(merchant);
     }
 
-    public String getCompanyName() {
-        return companyName;
+    public String getCompName() {
+        return compName;
     }
 
-    public String getBusinessRegNo() {
-        return businessRegNo;
+    public String getCompEmail() {
+        return compEmail;
     }
 
-    public String getMcAdds() {
-        return mcAdds;
+    public String getRegNo() {
+        return regNo;
     }
 
-    public String getMcEmail() {
-        return mcEmail;
+    public String getCompAddr() {
+        return compAddr;
+    }
+
+    public String getPostcode() {
+        return postcode;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public String getSummary() {
+        return summary;
     }
 
     public String getUid() {
         return uid;
     }
 
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+    public void setCompName(String compName) {
+        this.compName = compName;
     }
 
-    public void setBusinessRegNo(String businessRegNo) {
-        this.businessRegNo = businessRegNo;
+    public void setCompEmail(String compEmail) {
+        this.compEmail = compEmail;
     }
 
-    public void setMcAdds(String mcAdds) {
-        this.mcAdds = mcAdds;
+    public void setRegNo(String regNo) {
+        this.regNo = regNo;
     }
 
-    public void setMcEmail(String mcEmail) {
-        this.mcEmail = mcEmail;
+    public void setCompAddr(String compAddr) {
+        this.compAddr = compAddr;
+    }
+
+    public void setPostcode(String postcode) {
+        this.postcode = postcode;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 
     public void setUid(String uid) {
         this.uid = uid;
-    }
-
-    public String getAboutDesc() {
-        return AboutDesc;
-    }
-
-    public Integer getYearEstablish() {
-        return yearEstablish;
-    }
-
-    public Integer getNoEmployee() {
-        return NoEmployee;
-    }
-
-    public void setAboutDesc(String aboutDesc) {
-        AboutDesc = aboutDesc;
-    }
-
-    public void setYearEstablish(Integer yearEstablish) {
-        this.yearEstablish = yearEstablish;
-    }
-
-    public void setNoEmployee(Integer noEmployee) {
-        NoEmployee = noEmployee;
     }
 }

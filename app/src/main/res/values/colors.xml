@@ -1,6 +1,63 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+  <color name="transparent">@android:color/transparent</color>
+
+  <color name="general_grey_EEE">#FFEEEEEE</color>
+
+
+  <color name="colorPrimary">#3F51B5</color>
+  <color name="colorPrimaryDark">#303F9F</color>
+  <color name="colorAccent">#1976D2</color>
+  <color name="colorDarkAccent">#002756</color>
+
+  <color name="black_overlay">#66000000</color>
+
+  <color name="splash_background">#FF003575</color>
+  <color name="dark_background">#003575</color>
+  <color name="general_grey_border">#E4E4E4</color>
+
+  <color name="general_grey_bg">#FFF7F7F7</color>
+  <color name="menu_ontouch_bg">#FFECECEC</color>
+  <color name="general_grey_transparent_root_bg">#F8F9FB</color>
+
+  <!--Text Color-->
+  <color name="general_active_color">#FF1976D2</color>
+  <color name="general_active_color_opacity_40">#401976D2</color>
+  <color name="general_active_color_opacity_30">#301976D2</color>
+  <color name="general_active_color_opacity_20">#201976D2</color>
+  <color name="general_header_dark_grey_text">#FF002C6D</color>
+  <color name="general_header_dark_grey_text_half_opacity">#7F002C6D</color>
+  <color name="general_nav_title_dark_grey">#FF333333</color>
+  <color name="general_red_text">#ec1c23</color>
+  <color name="general_grey_text">#FF666666</color>
+  <color name="general_grey_text8787">#FF878787</color>
+  <color name="general_light_grey_text">#999999</color>
+  <color name="general_grey_text666">#666666</color>
+  <color name="general_grey_textCCC">#cccccc</color>
+  <color name="general_grey_text333">#333333</color>
+  <color name="general_grey_textA6A6">#FFA6A6A6</color>
+  <color name="general_grey_text9797">#FF979797</color>
+  <color name="general_grey_textE4E4">#FFE4E4E4</color>
+  <color name="general_grey_text9B9B">#FF9B9B9B</color>
+  <color name="general_white_F2F2">#FFF2F2F2</color>
+  <color name="general_white_8CFF">#8CFFFFFF</color>
+  <color name="general_white_86FF">#A6FFFFFF</color>
+  <color name="general_white">#FFFFFFFF</color>
+  <color name="general_white_opacity_60">#99FFFFFF</color>
+  <color name="general_yellow_dark">#FFFFE33B</color>
+  <color name="custom_til_error_text">#FFE32125</color>
+  <color name="general_dark_blue575">#FF003575</color>
+  <color name="general_grey_E9E9">#FFE9E9E9</color>
+  <color name="general_green_AE1D">#FF00AE1D</color>
+  <color name="general_acknowledgement_subheader">#D9FFFFFF</color>
+  <color name="general_grey_text4A4A">#FF4A4A4A</color>
+  <color name="general_grey_textA9A9">#FFA9A9A9</color>
+  <color name="general_logout_red_text">#FFD0021B</color>
+  <color name="general_logout_maroon_text">#FF8C0003</color>
+  <color name="void_payment_red_text">#FFED5153</color>
+  <color name="void_payment_clicked_red_text">#B62022</color>
+
+  <color name="scratch_start_gradient">#e5e5e5</color>
+  <color name="scratch_end_gradient">#cccccc</color>
 </resources>

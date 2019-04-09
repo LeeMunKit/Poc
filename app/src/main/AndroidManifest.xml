@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.poc">
 
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -10,7 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Register"></activity>
+        <activity android:name=".Registration_Activity"></activity>
+        <activity android:name=".Login_Activity" />
+        <activity android:name=".Pending" />
+        <activity android:name=".Services" />
+        <activity android:name=".Register" />
         <activity android:name=".MerchantDashboard" />
         <activity android:name=".About_US" />
         <activity android:name=".Document" />
@@ -22,6 +28,5 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
 </manifest>
