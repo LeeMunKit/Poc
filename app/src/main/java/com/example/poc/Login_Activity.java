@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.example.poc.dashboard.dashboard_Activity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -88,7 +89,7 @@ public class Login_Activity extends AppCompatActivity {
                                         }
                                     }
                                 } else {
-                                    Intent intent = new Intent(Login_Activity.this, MainActivity.class);
+                                    Intent intent = new Intent(Login_Activity.this, dashboard_Activity.class);
                                     startActivity(intent);
                                     finish();
                                 }

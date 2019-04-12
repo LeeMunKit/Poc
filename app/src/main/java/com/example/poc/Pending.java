@@ -21,42 +21,27 @@ import com.google.firebase.database.ValueEventListener;
 public class Pending extends AppCompatActivity {
 
     private ImageView pending;
-    private TextView description, pendingtxt, approvetxt;
+    private TextView regTxt, thanktxt, staytxt, documenttxt, receivetxt, apprvtxt;
     private Button done;
-    private Integer Status;
 
-    private String userId;
-    private FirebaseDatabase database;
-    private DatabaseReference userRef, approveRef;
-    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pending);
 
-        pendingtxt = findViewById(R.id.pendingTxt);
         pending = findViewById(R.id.pendingView);
-        description = findViewById(R.id.txtPending);
+        regTxt = findViewById(R.id.regComplete);
+        thanktxt = findViewById(R.id.thanksTxt);
+        staytxt = findViewById(R.id.stayTxt);
+        documenttxt = findViewById(R.id.docTxt);
+        receivetxt = findViewById(R.id.receiveTxt);
         done = findViewById(R.id.btnDone);
 
-        userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        database = FirebaseDatabase.getInstance();
-        auth = FirebaseAuth.getInstance();
-        userRef = database.getReference("MerchantEntity");
-        approveRef = database.getReference("ApproveEntity");
-
-        Status = 1;
-        if(Status == 1) {
-            pendingtxt.setVisibility(View.VISIBLE);
-        }
         done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child(auth.getCurrentUser().getUid());
-                ApproveEntity.LogFirebase(approveRef, userRef, userId, Status);
-//                System.out.println("Testing111:"+Status+":End.");
-                startActivity(new Intent(Pending.this, MainActivity.class));
+                startActivity(new Intent(Pending.this, Login_Activity.class));
                 finish();
 
             }

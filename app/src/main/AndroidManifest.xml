@@ -15,14 +15,15 @@
         <activity android:name=".ViewHolder.List_Of_Job"></activity>
         <activity android:name=".ViewHolder.List" />
         <activity android:name=".dashboard.dashboard_Activity">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
         </activity>
         <activity android:name=".Registration_Activity" />
-        <activity android:name=".Login_Activity" />
+        <activity android:name=".Login_Activity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Pending" />
         <activity android:name=".Services" />
         <activity android:name=".Register" />
