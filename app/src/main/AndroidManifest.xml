@@ -12,7 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".dashboard.dashboard_Activity"></activity>
+        <activity android:name=".ViewHolder.List_Of_Job"></activity>
+        <activity android:name=".ViewHolder.List" />
+        <activity android:name=".dashboard.dashboard_Activity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity android:name=".Registration_Activity" />
         <activity android:name=".Login_Activity" />
         <activity android:name=".Pending" />
@@ -22,11 +30,7 @@
         <activity android:name=".About_US" />
         <activity android:name=".Document" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

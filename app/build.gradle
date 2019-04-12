@@ -5,7 +5,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.poc"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -34,7 +34,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation 'com.android.support:design:28.0.0'
-
+    implementation 'com.rengwuxian.materialedittext:library:2.1.4'
+    implementation 'com.firebaseui:firebase-ui-database:4.2.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
