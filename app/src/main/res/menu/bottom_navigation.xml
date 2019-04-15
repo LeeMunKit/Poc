@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_request"
+        android:icon="@drawable/icn_home_clicked"
+        android:title="Jobs">
+    </item>
+
+    <item
+        android:id="@+id/nav_progress"
+        android:icon="@drawable/icn_jobs_clicked"
+        android:title="Quoted">
+
+    </item>
+
+    <item
+        android:id="@+id/nav_completed"
+        android:icon="@drawable/icn_profile_clicked"
+        android:title="Profile">
+
+    </item>
+</menu>
