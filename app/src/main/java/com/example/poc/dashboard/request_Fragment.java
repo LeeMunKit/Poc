@@ -3,7 +3,6 @@ package com.example.poc.dashboard;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.example.poc.R;
-import com.example.poc.Entity.JobInfo1;
+import com.example.poc.Entity.service_Info;
 import com.example.poc.ViewHolder.MenuViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -27,30 +26,36 @@ import java.util.ArrayList;
 public class request_Fragment extends Fragment {
     RecyclerView recycle_menu;
     RecyclerView.LayoutManager layoutManager;
-    DatabaseReference jobinfo;
-    ArrayList<JobInfo1> items = new ArrayList<>();
-    int Test = 0;
+    DatabaseReference service_Info;
+    ArrayList<service_Info> items = new ArrayList<>();
 
-    FirebaseRecyclerAdapter <JobInfo1, MenuViewHolder> adapter;
+    FirebaseRecyclerAdapter <service_Info, MenuViewHolder> adapter;
+
+    public static request_Fragment newInstance() {
+        request_Fragment fragment = new request_Fragment();
+        return fragment;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        System.out.println("Test 11111111:"+":End");
         View view = inflater.inflate(R.layout.request_fragment, container, false);
 
-        Test = 1;
         recycle_menu = view. findViewById(R.id.recycle_menu);
         recycle_menu.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getContext());
 
         recycle_menu.setLayoutManager(layoutManager);
-
+        final String TestCurrentUser;
+        // TestCurrentUser = CUser.currentUser.getUserName();
+        TestCurrentUser = "ggggjhjh";
         FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
-        jobinfo = FirebaseDatabase.getInstance().getReference().child("ListOfJob1");
-        System.out.println("Test 555555555:"+":End");
-        Query query = jobinfo.orderByKey();
-        System.out.println("Test 11111166666611:"+":End");
-        FirebaseRecyclerOptions firebaseRecyclerOptions = new FirebaseRecyclerOptions.Builder<JobInfo1>().setQuery(query, JobInfo1.class).build();
-        adapter = new FirebaseRecyclerAdapter<JobInfo1, MenuViewHolder>(firebaseRecyclerOptions) {
+        service_Info = FirebaseDatabase.getInstance().getReference().child("service_Info").child(TestCurrentUser);
+        String searchBoxInput = "Request";
+
+        Query query = service_Info.orderByChild("status").startAt((searchBoxInput)).endAt(searchBoxInput+"\uf8ff");
+
+        FirebaseRecyclerOptions firebaseRecyclerOptions = new FirebaseRecyclerOptions.Builder<service_Info>().setQuery(query, service_Info.class).build();
+        adapter = new FirebaseRecyclerAdapter<service_Info, MenuViewHolder>(firebaseRecyclerOptions) {
 
             @NonNull
             @Override
@@ -59,21 +64,17 @@ public class request_Fragment extends Fragment {
                 return new MenuViewHolder(view);
 
             }
-
+            //
             @Override
-            public void onBindViewHolder(@NonNull MenuViewHolder holder, int position, @NonNull JobInfo1 model) {
-                System.out.println("Test 222:"+":End");
-
-                holder.txtTheJobName1.setText(model.getJobName1());
-                System.out.println("Test 333:"+":End");
-                System.out.println("Test Name:"+model.getJobName1()+":End");
-                holder.txtTheNoOfGuard1.setText(model.getNoOfGuard1());
-                holder.txtTheDate1.setText(model.getDate1());
-                holder.txtTheLocation1.setText(model.getLocation1());
-                holder.txtTheStatus1.setText(model.getStatus1());
-                holder.txtTheType1.setText(model.getType1());
-                System.out.println("Test Test:"+Test+":End");
-
+            public void onBindViewHolder(@NonNull MenuViewHolder holder, int position, @NonNull service_Info model) {
+                holder.txtTheJobName1.setText(model.getJobTitle());
+                holder.txtTheNoOfGuard1.setText(model.getNoOfPax());
+                holder.txtTheDate1.setText(model.getReqDate());
+                holder.txtTheLocation1.setText(model.getAddressInfo());
+                holder.txtTheStatus1.setText(model.getStatus());
+                holder.txtFurtherStatus.setText(model.getFurthurStatus());
+System.out.println("Test Further Status:"+model.getFurthurStatus()+":End");
+                System.out.println("Test txtTheJobName1:"+model.getJobTitle()+":End");
             }
         };
         recycle_menu.setAdapter(adapter);

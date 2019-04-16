@@ -11,10 +11,8 @@ import com.example.poc.R;
 
 
 public class MenuViewHolder extends RecyclerView.ViewHolder {
-    // public TextView fileName, txtRegisterEventId, txtRegisterEventStartDate, txtRegisterEventName, txtContact_number, txtRegisterEventRadiogroup, txtRegisterEventLocation,txtPrice,txtCapacity;
-    //   public ImageView imageView;
-    public TextView txtTheJobName1,txtTheNoOfGuard1,txtTheDate1,txtTheLocation1,txtTheStatus1,txtTheType1;
-    //TheJobName1,TheNoOfGuard1,TheDate1,TheLocation1,TheStatus1,TheType1
+    public TextView txtTheJobName1,txtTheNoOfGuard1,txtTheDate1,txtTheLocation1,txtTheStatus1,txtTheType1, txtFurtherStatus;
+
     public MenuViewHolder(@NonNull View itemView) {
         super(itemView);
         // txtRegisterEventId = itemView.findViewById(R.id.RegisterEventId);
@@ -23,10 +21,9 @@ public class MenuViewHolder extends RecyclerView.ViewHolder {
         txtTheDate1 = itemView.findViewById(R.id.TheDate1);
         txtTheLocation1 = itemView.findViewById(R.id.TheLocation1);
         txtTheStatus1 = itemView.findViewById(R.id.TheStatus1);
-        //imageView = itemView.findViewById(R.id.item_image);
+
         txtTheType1 = itemView.findViewById(R.id.TheType1);
-        //  txtPrice = itemView.findViewById(R.id.Price);
-        //   txtCapacity = itemView.findViewById(R.id.Capacity);
+        txtFurtherStatus = itemView.findViewById(R.id.TheFurtherStatus);
 
 
     }

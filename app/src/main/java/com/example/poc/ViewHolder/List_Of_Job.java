@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -14,32 +13,22 @@ import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.view.MenuItemCompat;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Menu;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.SearchView;
 import android.widget.TextView;
 
 import com.example.poc.R;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
-import com.example.poc.Entity.JobInfo1;
+import com.example.poc.Entity.service_Info;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.example.poc.ViewHolder.MenuViewHolder;
 import com.google.firebase.database.Query;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -57,13 +46,13 @@ public class List_Of_Job extends AppCompatActivity {
     MaterialEditText searchBar1;
     String names;
     //ArrayList<String> items;
-    ArrayList<JobInfo1> items = new ArrayList<>();
-    FirebaseRecyclerAdapter <JobInfo1, MenuViewHolder> adapter;
+    ArrayList<service_Info> items = new ArrayList<>();
+    FirebaseRecyclerAdapter <service_Info, MenuViewHolder> adapter;
 
     private static final int REQUEST_LOCATION = 1;
     TextView CurrentLocation;
     LocationManager locationManager;
-    ArrayList<JobInfo1> EDate = new ArrayList<>();
+    ArrayList<service_Info> EDate = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,8 +96,8 @@ public class List_Of_Job extends AppCompatActivity {
 
 
         Query query = jobinfo.orderByKey();
-        FirebaseRecyclerOptions firebaseRecyclerOptions = new FirebaseRecyclerOptions.Builder<JobInfo1>().setQuery(query, JobInfo1.class).build();
-        adapter = new FirebaseRecyclerAdapter<JobInfo1, MenuViewHolder>(firebaseRecyclerOptions) {
+        FirebaseRecyclerOptions firebaseRecyclerOptions = new FirebaseRecyclerOptions.Builder<service_Info>().setQuery(query, service_Info.class).build();
+        adapter = new FirebaseRecyclerAdapter<service_Info, MenuViewHolder>(firebaseRecyclerOptions) {
             @NonNull
             @Override
             public MenuViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
@@ -117,13 +106,13 @@ public class List_Of_Job extends AppCompatActivity {
             }
 
             @Override
-            protected void onBindViewHolder(@NonNull MenuViewHolder holder, int position, @NonNull JobInfo1 model) {
-                holder.txtTheJobName1.setText(model.getJobName1());
-                holder.txtTheNoOfGuard1.setText(model.getNoOfGuard1());
-                holder.txtTheDate1.setText(model.getDate1());
-                holder.txtTheLocation1.setText(model.getLocation1());
-                holder.txtTheStatus1.setText(model.getStatus1());
-                holder.txtTheType1.setText(model.getType1());
+            protected void onBindViewHolder(@NonNull MenuViewHolder holder, int position, @NonNull service_Info model) {
+//                holder.txtTheJobName1.setText(model.getJobTitle());
+//                holder.txtTheNoOfGuard1.setText(model.getNoOfPax());
+//                holder.txtTheDate1.setText(model.getDate1());
+//                holder.txtTheLocation1.setText(model.getLocation1());
+//                holder.txtTheStatus1.setText(model.getStatus1());
+//                holder.txtTheType1.setText(model.getType1());
 
             }
 

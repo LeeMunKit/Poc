@@ -15,6 +15,11 @@ public class progress_Fragment extends Fragment {
     public progress_Fragment() {
     }
 
+    public static progress_Fragment newInstance() {
+        progress_Fragment fragment = new progress_Fragment();
+        return fragment;
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

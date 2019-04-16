@@ -15,7 +15,10 @@ public class complete_Fragment extends Fragment {
 
     public complete_Fragment() {
     }
-
+    public static complete_Fragment newInstance() {
+        complete_Fragment fragment = new complete_Fragment();
+        return fragment;
+    }
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
