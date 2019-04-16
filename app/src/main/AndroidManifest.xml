@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewHolder.List_Of_Job"></activity>
+        <activity android:name=".TJobDetails1"></activity>
+        <activity android:name=".ViewHolder.List_Of_Job" />
         <activity android:name=".ViewHolder.List" />
         <activity android:name=".dashboard.dashboard_Activity">
             <intent-filter>
@@ -22,17 +23,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".Registration_Activity" />
-        <activity android:name=".Login_Activity" >
-
-        </activity>
+        <activity android:name=".Login_Activity"></activity>
         <activity android:name=".Pending" />
         <activity android:name=".Services" />
         <activity android:name=".MerchantDashboard" />
         <activity android:name=".About_US" />
         <activity android:name=".Document" />
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

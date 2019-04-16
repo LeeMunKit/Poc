@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.poc.*;
 import com.example.poc.Login_Activity;
 import com.example.poc.R;
 import com.example.poc.Entity.service_Info;
@@ -60,7 +61,7 @@ public class request_Fragment extends Fragment {
                     @Override public void onItemClick(View view, int position) {
                         System.out.print("ÄAAAA");
                         // do whatever
-                        Intent myIntent = new Intent(request_Fragment.this.getActivity(), Login_Activity.class);
+                        Intent myIntent = new Intent(request_Fragment.this.getActivity(), TJobDetails1.class);
                         startActivity(myIntent);
                         //     Toast.makeText(getBaseContext(),"Deleting of event id "+id,Toast.LENGTH_SHORT).show();
                         //   StorageReference storageReference = FirebaseStorage.getInstance().getReference();
