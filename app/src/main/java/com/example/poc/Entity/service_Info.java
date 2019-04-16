@@ -4,7 +4,7 @@ public class service_Info {
 
     private String userid,serviceID,eqtype,nationality,status,addressInfo;
     private String NoOfPax, reqDate, jobTitle;
-    private String furthurStatus;
+    private String furtherStatus;
 
     public service_Info(){
 
@@ -12,7 +12,7 @@ public class service_Info {
 
     public service_Info(String userid, String serviceID, String eqtype, String nationality,
                         String status, String addressInfo, String NoOfPax, String reqDate,
-                        String jobTitle, String furthurStatus){
+                        String jobTitle, String furtherStatus){
         this.userid = userid;
         this.serviceID = serviceID;
         this.eqtype = eqtype;
@@ -22,7 +22,7 @@ public class service_Info {
         this.addressInfo = addressInfo;
         this.reqDate = reqDate;
         this.jobTitle = jobTitle;
-        this.furthurStatus =furthurStatus;
+        this.furtherStatus =furtherStatus;
 
     }
 
@@ -62,8 +62,8 @@ public class service_Info {
         return jobTitle;
     }
 
-    public String getFurthurStatus() {
-        return furthurStatus;
+    public String getFurtherStatus() {
+        return furtherStatus;
     }
 
     public void setUserid(String userid) {
@@ -102,7 +102,7 @@ public class service_Info {
         this.jobTitle = jobTitle;
     }
 
-    public void setFurthurStatus(String furthurStatus) {
-        this.furthurStatus = furthurStatus;
+    public void setFurtherStatus(String furtherStatus) {
+        this.furtherStatus = furtherStatus;
     }
 }

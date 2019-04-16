@@ -1,5 +1,6 @@
 package com.example.poc.dashboard;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,8 +10,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.poc.Login_Activity;
 import com.example.poc.R;
 import com.example.poc.Entity.service_Info;
+import com.example.poc.RecyclerItemClickListener;
 import com.example.poc.ViewHolder.MenuViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -50,8 +54,27 @@ public class request_Fragment extends Fragment {
         TestCurrentUser = "ggggjhjh";
         FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
         service_Info = FirebaseDatabase.getInstance().getReference().child("service_Info").child(TestCurrentUser);
-        String searchBoxInput = "Request";
 
+        recycle_menu.addOnItemTouchListener(
+                new RecyclerItemClickListener(recycle_menu ,new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override public void onItemClick(View view, int position) {
+                        System.out.print("ÄAAAA");
+                        // do whatever
+                        Intent myIntent = new Intent(request_Fragment.this.getActivity(), Login_Activity.class);
+                        startActivity(myIntent);
+                        //     Toast.makeText(getBaseContext(),"Deleting of event id "+id,Toast.LENGTH_SHORT).show();
+                        //   StorageReference storageReference = FirebaseStorage.getInstance().getReference();
+                        //    storageReference.child("profileImageUrl").child(filename).delete();
+                    }
+
+                    @Override public void onLongItemClick(View view, int position) {
+                        // do whatever
+                        System.out.print("BBBBB");
+                    }
+                })
+        );//furtherStatus
+        //status
+        String searchBoxInput = "Request";
         Query query = service_Info.orderByChild("status").startAt((searchBoxInput)).endAt(searchBoxInput+"\uf8ff");
 
         FirebaseRecyclerOptions firebaseRecyclerOptions = new FirebaseRecyclerOptions.Builder<service_Info>().setQuery(query, service_Info.class).build();
@@ -72,8 +95,8 @@ public class request_Fragment extends Fragment {
                 holder.txtTheDate1.setText(model.getReqDate());
                 holder.txtTheLocation1.setText(model.getAddressInfo());
                 holder.txtTheStatus1.setText(model.getStatus());
-                holder.txtFurtherStatus.setText(model.getFurthurStatus());
-System.out.println("Test Further Status:"+model.getFurthurStatus()+":End");
+                holder.txtFurtherStatus.setText(model.getFurtherStatus());
+System.out.println("Test Further Status:"+model.getFurtherStatus()+":End");
                 System.out.println("Test txtTheJobName1:"+model.getJobTitle()+":End");
             }
         };

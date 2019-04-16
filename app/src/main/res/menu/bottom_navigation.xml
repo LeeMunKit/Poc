@@ -3,20 +3,20 @@
     <item
         android:id="@+id/nav_request"
         android:icon="@drawable/icn_home_clicked"
-        android:title="Jobs">
+        android:title="request">
     </item>
 
     <item
         android:id="@+id/nav_progress"
         android:icon="@drawable/icn_jobs_clicked"
-        android:title="Quoted">
+        android:title="progress">
 
     </item>
 
     <item
         android:id="@+id/nav_completed"
         android:icon="@drawable/icn_profile_clicked"
-        android:title="Profile">
+        android:title="completed">
 
     </item>
 </menu>
