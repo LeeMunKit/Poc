@@ -22,7 +22,7 @@
   <color name="general_grey_transparent_root_bg">#F8F9FB</color>
 
   <!--Text Color-->
-  <color name="general_active_color">#FF1976D2</color>
+  <color name="general_active_color">#1976D2</color>
   <color name="general_active_color_opacity_40">#401976D2</color>
   <color name="general_active_color_opacity_30">#301976D2</color>
   <color name="general_active_color_opacity_20">#201976D2</color>
