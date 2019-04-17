@@ -45,41 +45,11 @@ public class quote extends AppCompatActivity {
 
         System.out.println("Services ID2:"+ServiceID+":End");
 
-        service_Info1.addValueEventListener(new ValueEventListener(){
 
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-
-
-                    service_Info user = dataSnapshot.child(ServiceID.toString()).getValue(service_Info.class);
-
-
-
-service_Info SInfo=new service_Info("ggggjhjh",ServiceID,"Armed","Foreigners",status,NoOfGuard,addressInfo,theDate,JobName,"Quoted");
-
-                service_Info1.child(ServiceID).setValue(SInfo);
-                System.out.println("tEST USER GET:"+user.getServiceID().toString()+":eND");
-                System.out.println("tEST USER GET:"+user.getNoOfPax().toString()+":eND");
-
-
-
-                            return;
-
-
-
-
-
-
-
-            }
-            public void onCancelled(DatabaseError databaseError){
-
-            }
-        });
 
 
 //---
-        jobdetail = findViewById(R.id.jobTxt);
+        //jobdetail = findViewById(R.id.jobTxt);
         quoteTxt = findViewById(R.id.quoteTxt);
         details = findViewById(R.id.detailsImg);
         amount = findViewById(R.id.etAmt);
@@ -88,6 +58,40 @@ service_Info SInfo=new service_Info("ggggjhjh",ServiceID,"Armed","Foreigners",st
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+                service_Info1.addValueEventListener(new ValueEventListener(){
+
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+
+
+                        service_Info user = dataSnapshot.child(ServiceID.toString()).getValue(service_Info.class);
+
+
+
+                        service_Info SInfo=new service_Info("ggggjhjh",ServiceID,"Armed","Foreigners",status,NoOfGuard,addressInfo,theDate,JobName,"Quoted");
+
+                        service_Info1.child(ServiceID).setValue(SInfo);
+                        System.out.println("tEST USER GET:"+user.getServiceID().toString()+":eND");
+                        System.out.println("tEST USER GET:"+user.getNoOfPax().toString()+":eND");
+
+
+
+                        return;
+
+
+
+
+
+
+
+                    }
+                    public void onCancelled(DatabaseError databaseError){
+
+                    }
+                });
+
                 startActivity(new Intent(quote.this, TJobDetails1.class));
             }
         });
