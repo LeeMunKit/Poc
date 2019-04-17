@@ -10,11 +10,13 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.poc.Quote.quote;
 import com.example.poc.R;
 import com.example.poc.Entity.service_Info;
 import com.example.poc.RecyclerItemClickListener;
+import com.example.poc.TestingPage;
 import com.example.poc.ViewHolder.MenuViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -32,7 +34,7 @@ public class request_Fragment extends Fragment {
     RecyclerView.LayoutManager layoutManager;
     DatabaseReference service_Info;
     ArrayList<service_Info> items = new ArrayList<>();
-
+String temp = "";
     FirebaseRecyclerAdapter <service_Info, MenuViewHolder> adapter;
 
     public static request_Fragment newInstance() {
@@ -55,24 +57,7 @@ public class request_Fragment extends Fragment {
         FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
         service_Info = FirebaseDatabase.getInstance().getReference().child("service_Info").child(TestCurrentUser);
 
-        recycle_menu.addOnItemTouchListener(
-                new RecyclerItemClickListener(recycle_menu ,new RecyclerItemClickListener.OnItemClickListener() {
-                    @Override public void onItemClick(View view, int position) {
-                        System.out.print("ÄAAAA");
-                        // do whatever
-                        Intent myIntent = new Intent(request_Fragment.this.getActivity(), quote.class);
-                        startActivity(myIntent);
-                        //     Toast.makeText(getBaseContext(),"Deleting of event id "+id,Toast.LENGTH_SHORT).show();
-                        //   StorageReference storageReference = FirebaseStorage.getInstance().getReference();
-                        //    storageReference.child("profileImageUrl").child(filename).delete();
-                    }
 
-                    @Override public void onLongItemClick(View view, int position) {
-                        // do whatever
-                        System.out.print("BBBBB");
-                    }
-                })
-        );//furtherStatus
         //status
         String searchBoxInput = "Request";
         Query query = service_Info.orderByChild("status").startAt((searchBoxInput)).endAt(searchBoxInput+"\uf8ff");
@@ -96,10 +81,71 @@ public class request_Fragment extends Fragment {
                 holder.txtTheLocation1.setText(model.getAddressInfo());
                 holder.txtTheStatus1.setText(model.getStatus());
                 holder.txtFurtherStatus.setText(model.getFurtherStatus());
+                holder.txtserviceID.setText(model.getServiceID());
+
+
+
 System.out.println("Test Further Status:"+model.getFurtherStatus()+":End");
                 System.out.println("Test txtTheJobName1:"+model.getJobTitle()+":End");
+
+
             }
         };
+
+
+        recycle_menu.addOnItemTouchListener(
+                new RecyclerItemClickListener(recycle_menu ,new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override public void onItemClick(View view, int position) {
+                        System.out.print("ÄAAAA");
+                        // do whatever
+
+                     //   temp = getServiceID();
+                        final String SID = ((TextView)view.findViewById(R.id.serviceID)).getText().toString();
+                        final String furtherStatus = ((TextView)view.findViewById(R.id.TheFurtherStatus)).getText().toString();
+                        final String status = ((TextView)view.findViewById(R.id.TheStatus1)).getText().toString();
+                        final String addressInfo = ((TextView)view.findViewById(R.id.TheLocation1)).getText().toString();
+                        final String JobName  = ((TextView)view.findViewById(R.id.TheJobName1)).getText().toString();
+                        final String NoOfGuard = ((TextView)view.findViewById(R.id.TheNoOfGuard1)).getText().toString();
+                        final String theDate = ((TextView)view.findViewById(R.id.TheDate1)).getText().toString();
+
+
+                        if(furtherStatus.equals("New!")) {
+
+
+
+
+                            Intent myIntent = new Intent(request_Fragment.this.getActivity(), quote.class);
+                            myIntent.putExtra("ServiceID", SID);
+                            myIntent.putExtra("furtherStatus", furtherStatus);
+                            myIntent.putExtra("status", status);
+                            myIntent.putExtra("addressInfo", addressInfo);
+                            myIntent.putExtra("JobName", JobName);
+                            myIntent.putExtra("NoOfGuard", NoOfGuard);
+                            myIntent.putExtra("theDate", theDate);
+                            System.out.println("Services ID:"+SID+":End");
+                            startActivity(myIntent);
+
+                        }else if (furtherStatus.equals("Quoted")){
+                            Intent myIntent = new Intent(request_Fragment.this.getActivity(), TestingPage.class);
+                            startActivity(myIntent);
+                        }
+
+
+
+
+                        //     Toast.makeText(getBaseContext(),"Deleting of event id "+id,Toast.LENGTH_SHORT).show();
+                        //   StorageReference storageReference = FirebaseStorage.getInstance().getReference();
+                        //    storageReference.child("profileImageUrl").child(filename).delete();
+                    }
+
+                    @Override public void onLongItemClick(View view, int position) {
+                        // do whatever
+                        System.out.print("BBBBB");
+                    }
+                })
+        );//furtherStatus
+
+
         recycle_menu.setAdapter(adapter);
 
         return view;

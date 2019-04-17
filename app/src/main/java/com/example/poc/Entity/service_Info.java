@@ -1,29 +1,36 @@
 package com.example.poc.Entity;
 
-public class service_Info {
 
-    private String userid,serviceID,eqtype,nationality,status,addressInfo;
+import com.google.firebase.database.DatabaseReference;
+
+public class service_Info {
+    private String userid,serviceID, eqType, nationality, status,addressInfo;
     private String NoOfPax, reqDate, jobTitle;
     private String furtherStatus;
+
 
     public service_Info(){
 
     }
 
-    public service_Info(String userid, String serviceID, String eqtype, String nationality,
-                        String status, String addressInfo, String NoOfPax, String reqDate,
-                        String jobTitle, String furtherStatus){
+    public service_Info(String userid, String serviceID, String eqType, String nationality, String status, String NoOfPax,String addressInfo, String reqDate, String jobTtitle, String furtherStatus){
         this.userid = userid;
         this.serviceID = serviceID;
-        this.eqtype = eqtype;
+        this.eqType = eqType;
         this.nationality = nationality;
         this.status = status;
         this.NoOfPax = NoOfPax;;
         this.addressInfo = addressInfo;
         this.reqDate = reqDate;
-        this.jobTitle = jobTitle;
+        this.jobTitle = jobTtitle;
         this.furtherStatus =furtherStatus;
+    }
 
+    public static void LogFirebase(DatabaseReference serviceRef, DatabaseReference userRef, String userId, String eqType, String nationality,String status, String NoOfPax,String addressInfo, String reqDate, String jobTitle,String furtherStatus) {
+        String key = serviceRef.push().getKey();
+        service_Info service_info = new service_Info(userId, key, eqType, nationality, status,NoOfPax,addressInfo, reqDate, jobTitle,furtherStatus);
+        serviceRef.child(userId).child(key).setValue(service_info);
+        userRef.child(userId).child("Services").child(key).setValue(service_info);
     }
 
     public String getUserid() {
@@ -34,36 +41,16 @@ public class service_Info {
         return serviceID;
     }
 
-    public String getEqtype() {
-        return eqtype;
+    public String getEqType() {
+        return eqType;
     }
 
     public String getNationality() {
         return nationality;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public String getAddressInfo() {
-        return addressInfo;
-    }
-
     public String getNoOfPax() {
         return NoOfPax;
-    }
-
-    public String getReqDate() {
-        return reqDate;
-    }
-
-    public String getJobTitle() {
-        return jobTitle;
-    }
-
-    public String getFurtherStatus() {
-        return furtherStatus;
     }
 
     public void setUserid(String userid) {
@@ -74,24 +61,40 @@ public class service_Info {
         this.serviceID = serviceID;
     }
 
-    public void setEqtype(String eqtype) {
-        this.eqtype = eqtype;
+    public void setEqType(String eqType) {
+        this.eqType = eqType;
     }
 
     public void setNationality(String nationality) {
         this.nationality = nationality;
     }
 
+    public void setNoOfPax(String noOfPax) {
+        NoOfPax = noOfPax;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getAddressInfo() {
+        return addressInfo;
     }
 
     public void setAddressInfo(String addressInfo) {
         this.addressInfo = addressInfo;
     }
 
-    public void setNoOfPax(String noOfPax) {
-        NoOfPax = noOfPax;
+    public String getReqDate() {
+        return reqDate;
+    }
+
+    public String getJobTitle() {
+        return jobTitle;
     }
 
     public void setReqDate(String reqDate) {
@@ -100,6 +103,10 @@ public class service_Info {
 
     public void setJobTitle(String jobTitle) {
         this.jobTitle = jobTitle;
+    }
+
+    public String getFurtherStatus() {
+        return furtherStatus;
     }
 
     public void setFurtherStatus(String furtherStatus) {

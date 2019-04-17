@@ -25,6 +25,9 @@ public class TJobDetails1 extends AppCompatActivity {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+
                 startActivity(new Intent(TJobDetails1.this, dashboard_Activity.class));
             }
         });

@@ -11,7 +11,7 @@ import com.example.poc.R;
 
 
 public class MenuViewHolder extends RecyclerView.ViewHolder {
-    public TextView txtTheJobName1,txtTheNoOfGuard1,txtTheDate1,txtTheLocation1,txtTheStatus1,txtTheType1, txtFurtherStatus;
+    public TextView txtTheJobName1,txtTheNoOfGuard1,txtTheDate1,txtTheLocation1,txtTheStatus1,txtserviceID, txtFurtherStatus;
 
     public MenuViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -22,7 +22,7 @@ public class MenuViewHolder extends RecyclerView.ViewHolder {
         txtTheLocation1 = itemView.findViewById(R.id.TheLocation1);
         txtTheStatus1 = itemView.findViewById(R.id.TheStatus1);
 
-        txtTheType1 = itemView.findViewById(R.id.TheType1);
+        txtserviceID = itemView.findViewById(R.id.serviceID);
         txtFurtherStatus = itemView.findViewById(R.id.TheFurtherStatus);
 
 
