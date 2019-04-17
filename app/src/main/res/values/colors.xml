@@ -3,7 +3,7 @@
 <resources>
   <color name="transparent">@android:color/transparent</color>
 
-  <color name="general_grey_EEE">#FFEEEEEE</color>
+  <color name="general_grey_EEE">#EEEEEE</color>
 
 
   <color name="colorPrimary">#3F51B5</color>

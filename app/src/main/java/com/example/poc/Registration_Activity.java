@@ -26,7 +26,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Registration_Activity extends AppCompatActivity {
+public class  Registration_Activity extends AppCompatActivity {
     private TextView joinUs, companyDetails, companyInfo, DocumentUpload, ic;
     private EditText compName,compEmail,compPass,regNo,compAddr,postCode,state,summary;
 
