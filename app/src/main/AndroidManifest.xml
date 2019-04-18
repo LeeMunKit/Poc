@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".accept_payment1"></activity>
+        <activity android:name=".SuccessReceivedPayment"></activity>
+        <activity android:name=".Send_receipt" />
+        <activity android:name=".accept_payment1" />
         <activity android:name=".confirm" />
         <activity android:name=".TestingPage" />
         <activity android:name=".Quote.TJobDetails1" />
