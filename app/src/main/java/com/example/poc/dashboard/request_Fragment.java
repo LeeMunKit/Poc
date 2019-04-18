@@ -126,8 +126,8 @@ System.out.println("Test Further Status:"+model.getFurtherStatus()+":End");
                             startActivity(myIntent);
 
                         }else if (furtherStatus.equals("Quoted")){
-                            Intent myIntent = new Intent(request_Fragment.this.getActivity(), TestingPage.class);
-                            startActivity(myIntent);
+                          //  Intent myIntent = new Intent(request_Fragment.this.getActivity(), TestingPage.class);
+                            //startActivity(myIntent);
                         }
 
 

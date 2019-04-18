@@ -37,7 +37,7 @@ ImageView detailsImg;
         final String JobName=  quote.getStringExtra("JobName");
         final String NoOfGuard=  quote.getStringExtra("NoOfGuard");
         final String theDate=  quote.getStringExtra("theDate");
-
+        System.out.println("No of Guard 3:"+NoOfGuard+":End");
         System.out.println("Services ID3:"+ServiceID+":End");
         detailsImg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,15 +48,15 @@ ImageView detailsImg;
 
 
 
-                        service_Info user = dataSnapshot.child(ServiceID.toString()).getValue(service_Info.class);
+                        //service_Info user = dataSnapshot.child(ServiceID.toString()).getValue(service_Info.class);
 
 
 
                         service_Info SInfo=new service_Info("ggggjhjh",ServiceID,"Armed","Foreigners",status,NoOfGuard,addressInfo,theDate,JobName,"Quoted");
 
                         service_Info1.child(ServiceID).setValue(SInfo);
-                        System.out.println("tEST USER GET:"+user.getServiceID().toString()+":eND");
-                        System.out.println("tEST USER GET:"+user.getNoOfPax().toString()+":eND");
+                    //    System.out.println("tEST USER GET:"+user.getServiceID().toString()+":eND");
+                    //    System.out.println("tEST USER GET:"+user.getNoOfPax().toString()+":eND");
 
 
 

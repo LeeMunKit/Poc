@@ -74,7 +74,7 @@ System.out.println("LALALAL");
 
               //  startActivity(new Intent(quote.this, TJobDetails1.class));
 
-                startActivity(new Intent(quote.this, confirm.class));
+
             }
         });
     }
