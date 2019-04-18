@@ -50,14 +50,16 @@ ImageView detailsImg;
 
                         //service_Info user = dataSnapshot.child(ServiceID.toString()).getValue(service_Info.class);
 
+                        if(status.equals("booked")) {
 
+                            service_Info SInfo = new service_Info("ggggjhjh", ServiceID, "Armed", "Foreigners", "past", NoOfGuard, addressInfo, theDate, JobName, "");
 
-                        service_Info SInfo=new service_Info("ggggjhjh",ServiceID,"Armed","Foreigners","past",NoOfGuard,addressInfo,theDate,JobName,"");
-
-                        service_Info1.child(ServiceID).setValue(SInfo);
+                            service_Info1.child(ServiceID).setValue(SInfo);
 //                        System.out.println("tEST USER GET:"+user.getServiceID().toString()+":eND");
-                        //    System.out.println("tEST USER GET:"+user.getNoOfPax().toString()+":eND");
+                            //    System.out.println("tEST USER GET:"+user.getNoOfPax().toString()+":eND");
+                        }else{
 
+                        }
 
 
                         return;
