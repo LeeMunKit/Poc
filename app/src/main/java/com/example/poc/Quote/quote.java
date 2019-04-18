@@ -9,9 +9,10 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import com.example.poc.confirm;
 import com.example.poc.Entity.service_Info;
 import com.example.poc.R;
+import com.example.poc.dashboard.request_Fragment;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -47,7 +48,6 @@ public class quote extends AppCompatActivity {
 
 
 
-
 //---
         //jobdetail = findViewById(R.id.jobTxt);
         quoteTxt = findViewById(R.id.quoteTxt);
@@ -59,40 +59,22 @@ public class quote extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+System.out.println("LALALAL");
 
-                service_Info1.addValueEventListener(new ValueEventListener(){
+                Intent myIntent = new Intent(quote.this, confirm.class);
+                myIntent.putExtra("ServiceID", ServiceID);
+                myIntent.putExtra("furtherStatus", furtherStatus);
+                myIntent.putExtra("status", status);
+                myIntent.putExtra("addressInfo", addressInfo);
+                myIntent.putExtra("JobName", JobName);
+                myIntent.putExtra("NoOfGuard", NoOfGuard);
+                myIntent.putExtra("theDate", theDate);
+                System.out.println("Services ID00:"+ServiceID+":End");
+                startActivity(myIntent);
 
-                    public void onDataChange(DataSnapshot dataSnapshot) {
+              //  startActivity(new Intent(quote.this, TJobDetails1.class));
 
-
-
-                        service_Info user = dataSnapshot.child(ServiceID.toString()).getValue(service_Info.class);
-
-
-
-                        service_Info SInfo=new service_Info("ggggjhjh",ServiceID,"Armed","Foreigners",status,NoOfGuard,addressInfo,theDate,JobName,"Quoted");
-
-                        service_Info1.child(ServiceID).setValue(SInfo);
-                        System.out.println("tEST USER GET:"+user.getServiceID().toString()+":eND");
-                        System.out.println("tEST USER GET:"+user.getNoOfPax().toString()+":eND");
-
-
-
-                        return;
-
-
-
-
-
-
-
-                    }
-                    public void onCancelled(DatabaseError databaseError){
-
-                    }
-                });
-
-                startActivity(new Intent(quote.this, TJobDetails1.class));
+                startActivity(new Intent(quote.this, confirm.class));
             }
         });
     }

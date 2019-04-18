@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TestingPage"></activity>
+        <activity android:name=".accept_payment1"></activity>
+        <activity android:name=".confirm" />
+        <activity android:name=".TestingPage" />
         <activity android:name=".Quote.TJobDetails1" />
         <activity android:name=".ViewHolder.List_Of_Job" />
         <activity android:name=".ViewHolder.List" />
@@ -24,7 +26,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Registration_Activity" />
-        <activity android:name=".Login_Activity"></activity>
+        <activity android:name=".Login_Activity" />
         <activity android:name=".Pending" />
         <activity android:name=".Services" />
         <activity android:name=".MerchantDashboard">
@@ -36,8 +38,8 @@
         </activity>
         <activity android:name=".About_US" />
         <activity android:name=".Document" />
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".Quote.quote"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Quote.quote" />
     </application>
 
 </manifest>
