@@ -60,8 +60,8 @@ public class complete_Fragment extends Fragment {
                     @Override public void onItemClick(View view, int position) {
                         System.out.print("ÄAAAA");
                         // do whatever
-                        Intent myIntent = new Intent(complete_Fragment.this.getActivity(), Login_Activity.class);
-                        startActivity(myIntent);
+                   //     Intent myIntent = new Intent(complete_Fragment.this.getActivity(), Login_Activity.class);
+                    //    startActivity(myIntent);
                         //     Toast.makeText(getBaseContext(),"Deleting of event id "+id,Toast.LENGTH_SHORT).show();
                         //   StorageReference storageReference = FirebaseStorage.getInstance().getReference();
                         //    storageReference.child("profileImageUrl").child(filename).delete();

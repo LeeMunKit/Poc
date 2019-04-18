@@ -50,6 +50,8 @@ ImageView detailsImg;
 
                         //service_Info user = dataSnapshot.child(ServiceID.toString()).getValue(service_Info.class);
 
+if (furtherStatus.equals("New!")){
+
 
 
                         service_Info SInfo=new service_Info("ggggjhjh",ServiceID,"Armed","Foreigners",status,NoOfGuard,addressInfo,theDate,JobName,"Quoted");
@@ -58,7 +60,9 @@ ImageView detailsImg;
                     //    System.out.println("tEST USER GET:"+user.getServiceID().toString()+":eND");
                     //    System.out.println("tEST USER GET:"+user.getNoOfPax().toString()+":eND");
 
-
+}else if(furtherStatus.equals("Quoted")){
+    startActivity(new Intent(confirm.this, confirm.class));
+}
 
                         return;
 
