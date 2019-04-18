@@ -124,7 +124,7 @@ System.out.println("Test Further Status:"+model.getFurtherStatus()+":End");
                             myIntent.putExtra("theDate", theDate);
                             System.out.println("Services ID:"+SID+":End");
                             startActivity(myIntent);
-
+                            getActivity().finish();
                         }else if (furtherStatus.equals("Quoted")){
                           //  Intent myIntent = new Intent(request_Fragment.this.getActivity(), TestingPage.class);
                             //startActivity(myIntent);

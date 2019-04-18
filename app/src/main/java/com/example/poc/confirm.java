@@ -50,22 +50,17 @@ ImageView detailsImg;
 
                         //service_Info user = dataSnapshot.child(ServiceID.toString()).getValue(service_Info.class);
 
-if (furtherStatus.equals("New!")){
-
-
-
                         service_Info SInfo=new service_Info("ggggjhjh",ServiceID,"Armed","Foreigners",status,NoOfGuard,addressInfo,theDate,JobName,"Quoted");
 
                         service_Info1.child(ServiceID).setValue(SInfo);
+    startActivity(new Intent(confirm.this, TJobDetails1.class));
+
                     //    System.out.println("tEST USER GET:"+user.getServiceID().toString()+":eND");
                     //    System.out.println("tEST USER GET:"+user.getNoOfPax().toString()+":eND");
 
-}else if(furtherStatus.equals("Quoted")){
-    startActivity(new Intent(confirm.this, confirm.class));
-}
+
 
                         return;
-
 
 
 
@@ -76,10 +71,19 @@ if (furtherStatus.equals("New!")){
                     public void onCancelled(DatabaseError databaseError){
 
                     }
+
                 });
-                startActivity(new Intent(confirm.this, TJobDetails1.class));
+               // getActivity().finish();
+             //   onStop();
+               onDestroy();
+              //  startActivity(new Intent(confirm.this, TJobDetails1.class));
             }
         });
 
     }
+
+
+
+
+
 }

@@ -71,7 +71,7 @@ System.out.println("LALALAL");
                 myIntent.putExtra("theDate", theDate);
                 System.out.println("Services ID00:"+ServiceID+":End");
                 startActivity(myIntent);
-
+                finish();
               //  startActivity(new Intent(quote.this, TJobDetails1.class));
 
 

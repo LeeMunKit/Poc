@@ -50,16 +50,15 @@ ImageView detailsImg;
 
                         //service_Info user = dataSnapshot.child(ServiceID.toString()).getValue(service_Info.class);
 
-                        if(status.equals("booked")) {
+
 
                             service_Info SInfo = new service_Info("ggggjhjh", ServiceID, "Armed", "Foreigners", "past", NoOfGuard, addressInfo, theDate, JobName, "");
 
                             service_Info1.child(ServiceID).setValue(SInfo);
+                        startActivity(new Intent(accept_payment1.this, Send_receipt.class));
 //                        System.out.println("tEST USER GET:"+user.getServiceID().toString()+":eND");
                             //    System.out.println("tEST USER GET:"+user.getNoOfPax().toString()+":eND");
-                        }else{
 
-                        }
 
 
                         return;
@@ -75,8 +74,8 @@ ImageView detailsImg;
 
                     }
                 });
-                startActivity(new Intent(accept_payment1.this, Send_receipt.class));
-
+                //onDestroy();
+               // finish();
             }
         });
 
