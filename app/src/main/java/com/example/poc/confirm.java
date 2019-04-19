@@ -54,7 +54,8 @@ ImageView detailsImg;
 
                         service_Info1.child(ServiceID).setValue(SInfo);
     startActivity(new Intent(confirm.this, TJobDetails1.class));
-
+                    finish();
+                        service_Info1.removeEventListener(this);
                     //    System.out.println("tEST USER GET:"+user.getServiceID().toString()+":eND");
                     //    System.out.println("tEST USER GET:"+user.getNoOfPax().toString()+":eND");
 
@@ -75,7 +76,8 @@ ImageView detailsImg;
                 });
                // getActivity().finish();
              //   onStop();
-               onDestroy();
+            //   onDestroy();
+            //    startActivity(new Intent(confirm.this, TJobDetails1.class));
               //  startActivity(new Intent(confirm.this, TJobDetails1.class));
             }
         });
